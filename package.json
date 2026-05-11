@@ -1,0 +1,24 @@
+{
+  "name": "abusufyan-xyz",
+  "version": "1.0.0",
+  "description": "> Solo maker from Pakistan building free professional tools for people worldwide.\r > No sign-up. No paywalls. Just tools that work.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abusufyan-netizen/abusufyan-xyz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/abusufyan-netizen/abusufyan-xyz/issues"
+  },
+  "homepage": "https://github.com/abusufyan-netizen/abusufyan-xyz#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
