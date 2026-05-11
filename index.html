@@ -113,7 +113,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:56px;d
 .hero-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:52px;flex-wrap:wrap;gap:12px}
 .hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border2);padding:6px 14px;border-radius:2px;display:flex;align-items:center;gap:6px}
 .hero-idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint)}
-.hero-h{font-family:'Playfair Display',serif;font-size:clamp(40px,10vw,128px);line-height:.92;font-weight:700;letter-spacing:-.02em;margin-bottom:44px}
+.hero-h{font-family:'Playfair Display',serif;font-size:clamp(42px,12vw,128px);line-height:.9;font-weight:700;letter-spacing:-.02em;margin-bottom:44px;max-width:800px}
 .hero-h em{font-style:italic;color:var(--accent2)}
 .hero-bot{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end}
 .hero-desc{font-size:16px;color:var(--muted);line-height:1.75;font-weight:400}
@@ -126,7 +126,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:56px;d
 @media(max-width:700px){
   .hero{padding:100px 20px 56px}
   .hero-bot{grid-template-columns:1fr}
-  .hero-tag{font-size:9px;padding:4px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  .hero-tag{font-size:10px;padding:6px 12px;line-height:1.4;text-align:left}
+  .hero-h{font-size:clamp(38px,15vw,80px);margin-bottom:32px}
 }
 
 /* DIVIDER */
@@ -304,7 +305,7 @@ footer{border-top:2px solid var(--text);padding:28px 60px;display:flex;justify-c
     <div class="hero-tag"><span class="nav-dot"></span>Solo Maker · Building in Public · Pakistan</div>
     <span class="hero-idx">Portfolio — 2026</span>
   </div>
-  <h1 class="hero-h rev d1">Free<br>Tools<br><em>That</em><br>Work.</h1>
+  <h1 class="hero-h rev d1">Free Tools <em>That</em> Work.</h1>
   <div class="hero-bot rev d2">
     <p class="hero-desc">Hi, I'm <strong>Abu Sufyan</strong>. I build free professional tools for people who need quick, reliable answers — HR managers, developers, CFOs, employees. <strong>No sign-up. No paywall. Just the answer.</strong></p>
     <div class="hero-ctas">
