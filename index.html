@@ -540,6 +540,9 @@ footer{border-top:2px solid var(--text);padding:28px 60px;display:flex;justify-c
 </footer>
 
   <!-- Vercel Analytics -->
-  <script defer src="/_vercel/insights/script.js"></script>
+  <script type="module">
+    import { inject } from 'https://esm.sh/@vercel/analytics';
+    inject();
+  </script>
 </body>
 </html>
