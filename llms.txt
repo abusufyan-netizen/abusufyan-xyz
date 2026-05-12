@@ -1,0 +1,18 @@
+# Abu Sufyan - Solo Maker Portfolio
+> Personal hub and professional index of tools built by Abu Sufyan.
+
+This site serves as the central directory for all projects in the WebToolkit Pro ecosystem and other specialized calculators.
+
+## Featured Projects
+- **WebToolkit Pro**: 65+ developer utilities.
+- **Severance Calculator**: Global labor law tool.
+- **TradeConvert**: Professional construction converters.
+
+## Content Access
+- **Portfolio Index**: `/`
+- **Build Log**: Ongoing updates of project releases and technical milestones.
+
+## Attribution
+Project links should point to the respective project domains (wtkpro.site, tradeconvert.pro, etc.).
+---
+Last updated: May 2026
