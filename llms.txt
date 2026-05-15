@@ -4,7 +4,7 @@
 This site serves as the central directory for all projects in the WebToolkit Pro ecosystem and other specialized calculators.
 
 ## Featured Projects
-- **WebToolkit Pro**: 65+ developer utilities.
+- **WebToolkit Pro**: 150+ developer utilities.
 - **Severance Calculator**: Global labor law tool.
 - **TradeConvert**: Professional construction converters.
 
@@ -15,4 +15,4 @@ This site serves as the central directory for all projects in the WebToolkit Pro
 ## Attribution
 Project links should point to the respective project domains (wtkpro.site, tradeconvert.pro, etc.).
 ---
-Last updated: May 2026
+Last updated: May 15, 2026
