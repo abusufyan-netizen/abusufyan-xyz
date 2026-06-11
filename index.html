@@ -488,6 +488,21 @@ nav.scrolled{
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
 }
+
+/* ── STORY LISTING ── */
+.story-listing { display: flex; flex-direction: column; gap: 48px; }
+.story-item h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 12px; }
+.story-item h3 a { color: var(--text); text-decoration: none; transition: color 0.2s; }
+.story-item h3 a:hover { color: var(--accent2); }
+.story-item p { font-size: 15px; color: var(--muted); line-height: 1.8; max-width: 700px; }
+.story-item:active { transform: scale(0.99); transition: transform 160ms var(--ease-out); }
+
+/* ── IMPACT GRID ── */
+.impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.impact-item { background: var(--surface); border: 1px solid var(--border); padding: 32px; border-radius: 4px; }
+.impact-quote { font-size: 15px; color: var(--text); line-height: 1.7; font-style: italic; }
+@media(max-width: 700px) { .impact-grid { grid-template-columns: 1fr; } }
+
 </style>
 </head>
 <body>
@@ -513,12 +528,12 @@ nav.scrolled{
 <div class="hero" style="position:relative;overflow:hidden">
   <div class="hero-orb"></div>
   <div class="hero-top reveal" data-delay="0">
-    <div class="hero-tag"><span class="nav-dot"></span>Indie Maker · 5 Live Projects · Building in Public · Pakistan</div>
+    <div class="hero-tag"><span class="nav-dot"></span>Solo Maker · Lahore, Pakistan</div>
     <span class="hero-idx">Portfolio — 2026</span>
   </div>
-  <h1 class="hero-h reveal" data-delay="1" id="hero-heading">Free Tools <em>That</em> Work.</h1>
+  <h1 class="hero-h reveal" data-delay="1" id="hero-heading">The person who needs a tool most usually can't <em>afford</em> a lawyer.</h1>
   <div class="hero-bot reveal" data-delay="2">
-    <p class="hero-desc">Hi, I'm <strong>Abu Sufyan</strong>. I build free professional tools for people who need quick, reliable answers — HR managers, developers, CFOs, employees. <strong>No sign-up. No paywall. Just the answer.</strong></p>
+    <p class="hero-desc">Hi, I'm <strong>Abu Sufyan</strong>. I build free professional tools for people who need quick, reliable answers. When I couldn't find clean, sign-up-free utilities for HR managers, developers, and CFOs, I decided to build them myself. <strong>No sign-up. No paywall. Just the answer.</strong></p>
     <div class="hero-ctas">
       <a href="/tools" class="btn-dark">View My Tools</a>
       <a href="https://wtkpro.site" target="_blank" rel="noopener noreferrer" aria-label="Visit WebToolkit Pro - 150+ Developer Tools" class="btn-out">WebToolkit Pro ↗</a>
@@ -543,189 +558,27 @@ nav.scrolled{
     <span class="sec-count">07 items</span>
   </div>
 
-  <div class="listing" style="margin-top:2px" id="tools-listing">
-
-    <!-- 01 FEATURED -->
-    <a class="li featured reveal" data-delay="1" href="https://wtkpro.site" target="_blank" rel="noopener">
-      <div class="li-num">01</div>
-      <div class="li-body">
-        <div class="li-top">
-          <div class="li-name">WebToolkit <em>Pro</em></div>
-          <span class="badge b-feat">★ Featured</span>
-          <span class="badge b-live">Live</span>
-        </div>
-        <div class="li-url">wtkpro.site</div>
-        <div class="li-desc">150+ free professional tools for developers, writers, marketers, and HR teams. JSON formatters, password generators, word counters, hash generators, base64 encoders — all free, all instant.</div>
-        <div class="li-tags">
-          <span class="ltag">Developer Tools</span>
-          <span class="ltag">150+ Tools</span>
-          <span class="ltag">AdSense</span>
-          <span class="ltag">Main Hub</span>
-        </div>
-      </div>
-      <div class="feat-panel">
-        <div class="fp-row"><span class="fp-l">💻 Dev Tools</span><span class="fp-v">JSON Formatter, Diff</span></div>
-        <div class="fp-row"><span class="fp-l">🔒 Security</span><span class="fp-v">MD5, SHA, Bcrypt</span></div>
-        <div class="fp-row"><span class="fp-l">📝 Text</span><span class="fp-v">Word count, Case</span></div>
-        <div class="fp-row"><span class="fp-l">⚙️ Utilities</span><span class="fp-v">Base64, URL Encode</span></div>
-        <div class="fp-row"><span class="fp-l">🌐 Web</span><span class="fp-v">DNS, IP Lookup</span></div>
-        <div class="fp-row"><span class="fp-l">⏱️ Time</span><span class="fp-v">Unix Epoch, Stopwatches</span></div>
-        <div class="fp-row"><span class="fp-l">🧮 SEO</span><span class="fp-v">Meta Gen, SERP</span></div>
-        <div class="fp-row"><span class="fp-l">🎨 Design</span><span class="fp-v">Color Picker, Contrast</span></div>
-      </div>
-    </a>
-
-    <!-- 02 -->
-    <a class="li clickable reveal" data-delay="2" href="https://severancecalculator.xyz" target="_blank" rel="noopener noreferrer" aria-label="Visit Severance Pay Calculator - Global 2026 Formulas">
-      <div class="li-num">02</div>
-      <div class="li-body">
-        <div class="li-top">
-          <div class="li-name">Severance<br><em>Calculator</em></div>
-          <span class="badge b-live">Live</span>
-        </div>
-        <div class="li-url">severancecalculator.xyz</div>
-        <div class="li-desc">The only free global severance pay calculator covering 30+ countries with official 2026 labor law formulas. Built for HR professionals, employees, and CFOs who need to know exactly what they're owed — instantly.</div>
-        <div class="li-tags">
-          <span class="ltag">HR Tool</span>
-          <span class="ltag">Labor Law</span>
-          <span class="ltag">Finance</span>
-          <span class="ltag">Multi-country</span>
-          <span class="ltag">AdSense Ready</span>
-          <span class="ltag">Free Forever</span>
-        </div>
-      </div>
-      <div class="li-right">
-        <span class="li-arrow">↗</span>
-        <div class="li-mets">
-          <div><div class="lm-v">30+</div><div class="lm-l">Countries</div></div>
-          <div><div class="lm-v">2026</div><div class="lm-l">Laws</div></div>
-        </div>
-      </div>
-    </a>
-
-    <!-- 03 -->
-    <div class="li reveal" data-delay="3">
-      <div class="li-num">03</div>
-      <div class="li-body">
-        <div class="li-top">
-          <div class="li-name">Working Capital <em>Calculator</em></div>
-          <span class="badge b-soon">In Dev</span>
-        </div>
-        <div class="li-url">workingcapitalcalc.com</div>
-        <div class="li-desc">Professional financial ratio calculator for CFOs, accountants, and analysts. Working capital, current ratio, quick ratio — computed instantly. No spreadsheet needed.</div>
-        <div class="li-tags">
-          <span class="ltag">Finance</span>
-          <span class="ltag">CFO Tool</span>
-          <span class="ltag">B2B</span>
-          <span class="ltag">Accounting</span>
-        </div>
-      </div>
-      <div class="li-right">
-        <div class="li-mets">
-          <div><div class="lm-v" style="color:var(--faint)">Q3</div><div class="lm-l">2026</div></div>
-        </div>
-      </div>
+  <div class="story-listing" style="margin-top:40px">
+    <div class="story-item reveal" data-delay="1">
+      <h3><a href="https://wtkpro.site" target="_blank" rel="noopener">WebToolkit Pro ↗</a></h3>
+      <p>I got tired of pasting sensitive JSON payloads into random ad-filled sites just to format them. So I built a client-side only toolkit. No servers, no data logging. It started with 12 utilities and has organically grown to 150+ tools used by developers and writers daily.</p>
     </div>
-
-    <!-- 04 -->
-    <div class="li reveal" data-delay="4">
-      <div class="li-num">04</div>
-      <div class="li-body">
-        <div class="li-top">
-          <div class="li-name">Freight Class <em>Calculator</em></div>
-          <span class="badge b-soon">In Dev</span>
-        </div>
-        <div class="li-url">freightclasscalculator.com</div>
-        <div class="li-desc">LTL freight class calculator using the NMFC density formula — for logistics managers, shippers, and freight brokers who need instant class determination without digging through carrier portals.</div>
-        <div class="li-tags">
-          <span class="ltag">Logistics</span>
-          <span class="ltag">LTL / NMFC</span>
-          <span class="ltag">Freight</span>
-          <span class="ltag">B2B</span>
-        </div>
-      </div>
-      <div class="li-right">
-        <div class="li-mets">
-          <div><div class="lm-v" style="color:var(--faint)">Q4</div><div class="lm-l">2026</div></div>
-        </div>
-      </div>
+    <div class="story-item reveal" data-delay="2">
+      <h3><a href="https://severancecalculator.xyz" target="_blank" rel="noopener">Severance Calculator ↗</a></h3>
+      <p>I couldn't find a clean severance calculator for Pakistan that didn't require an email sign-up. I built one in a weekend. Then HR managers started asking for UAE, then the UK, then the US. It now covers 30+ countries with official 2026 labor law formulas and gets used globally every single day.</p>
     </div>
-
-    <!-- 05 -->
-    <a class="li clickable reveal" data-delay="5" href="https://tradeconvert.pro" target="_blank" rel="noopener">
-      <div class="li-num">05</div>
-      <div class="li-body">
-        <div class="li-top">
-          <div class="li-name">Trade<em>Convert</em></div>
-          <span class="badge b-live">Live</span>
-        </div>
-        <div class="li-url">tradeconvert.pro</div>
-        <div class="li-desc">Professional unit conversion tools for the building trades. Verified technical reference for plumbing, electrical, and structural calculations.</div>
-        <div class="li-tags">
-          <span class="ltag">Construction</span>
-          <span class="ltag">Unit Converter</span>
-          <span class="ltag">Engineering</span>
-          <span class="ltag">NIST Verified</span>
-        </div>
-      </div>
-      <div class="li-right">
-        <span class="li-arrow">↗</span>
-        <div class="li-mets">
-          <div><div class="lm-v">Trade</div><div class="lm-l">Reference</div></div>
-        </div>
-      </div>
-    </a>
-
-    <!-- 06 -->
-    <a class="li clickable reveal" data-delay="6" href="https://slabreachcalculator.site/" target="_blank" rel="noopener">
-      <div class="li-num">06</div>
-      <div class="li-body">
-        <div class="li-top">
-          <div class="li-name">SLA Breach <em>Calculator</em></div>
-          <span class="badge b-live">Live</span>
-        </div>
-        <div class="li-url">slabreachcalculator.site</div>
-        <div class="li-desc">Instantly compute financial penalties, service credits, and uptime shortfalls from Service Level Agreements. Built for IT managers and procurement teams.</div>
-        <div class="li-tags">
-          <span class="ltag">Legal Tech</span>
-          <span class="ltag">B2B</span>
-          <span class="ltag">Procurement</span>
-          <span class="ltag">IT Ops</span>
-        </div>
-      </div>
-      <div class="li-right">
-        <span class="li-arrow">↗</span>
-        <div class="li-mets">
-          <div><div class="lm-v">B2B</div><div class="lm-l">Utility</div></div>
-        </div>
-      </div>
-    </a>
-
-    <!-- 07 -->
-    <a class="li clickable reveal" data-delay="7" href="https://crawl-scope.vercel.app/" target="_blank" rel="noopener">
-      <div class="li-num">07</div>
-      <div class="li-body">
-        <div class="li-top">
-          <div class="li-name">Crawl<em>Scope</em></div>
-          <span class="badge b-live">Live</span>
-        </div>
-        <div class="li-url">crawl-scope.vercel.app</div>
-        <div class="li-desc">Generative Engine Optimization audit tool. Analyze how Googlebot, GPTBot, and AI crawlers read your site. Built with Next.js.</div>
-        <div class="li-tags">
-          <span class="ltag">SEO</span>
-          <span class="ltag">AI Crawlers</span>
-          <span class="ltag">Audit</span>
-          <span class="ltag">Developer Tools</span>
-        </div>
-      </div>
-      <div class="li-right">
-        <span class="li-arrow">↗</span>
-        <div class="li-mets">
-          <div><div class="lm-v">SEO</div><div class="lm-l">Tech</div></div>
-        </div>
-      </div>
-    </a>
-
+    <div class="story-item reveal" data-delay="3">
+      <h3><a href="https://tradeconvert.pro" target="_blank" rel="noopener">TradeConvert ↗</a></h3>
+      <p>Construction workers and engineers spend hours looking at unreadable PDF conversion tables on job sites. TradeConvert turns NIST-verified technical reference data into a clean, mobile-first interface they can actually tap with gloves on.</p>
+    </div>
+    <div class="story-item reveal" data-delay="4">
+      <h3><a href="https://slabreachcalculator.site/" target="_blank" rel="noopener">SLA Breach Calculator ↗</a></h3>
+      <p>Computing financial penalties and service credits for B2B IT contracts is a nightmare of spreadsheet formulas. I built this to instantly calculate uptime shortfalls for procurement teams and IT managers so they don't have to hire expensive consultants.</p>
+    </div>
+    <div class="story-item reveal" data-delay="5">
+      <h3><a href="https://crawl-scope.vercel.app/" target="_blank" rel="noopener">CrawlScope ↗</a></h3>
+      <p>As AI started scraping the web, I needed a way to audit how GPTBot and Anthropic actually read my sites. CrawlScope is a dashboard that simulates AI crawlers and checks your robots.txt defenses. Built primarily for technical SEOs.</p>
+    </div>
   </div>
 </section>
 
@@ -738,34 +591,18 @@ nav.scrolled{
     <span class="sec-count">Social proof</span>
   </div>
 
-  <div class="proof-grid" style="margin-top:28px">
-    <div class="proof-item reveal" data-delay="0"><div class="pl">Tools Live</div><div class="pn" data-count="160" data-suffix="+">160+</div><div class="ps">across 5 platforms</div></div>
-    <div class="proof-item reveal" data-delay="1"><div class="pl">Countries</div><div class="pn" data-count="30" data-suffix="+">30+</div><div class="ps">labor laws covered</div></div>
-    <div class="proof-item reveal" data-delay="2"><div class="pl">Sign-ups needed</div><div class="pn" data-count="0" data-suffix="">0</div><div class="ps">open and free forever</div></div>
-    <div class="proof-item reveal" data-delay="3"><div class="pl">Laws Updated</div><div class="pn">2026</div><div class="ps">verified official sources</div></div>
-  </div>
-
-  <div style="margin-top:40px;border:1px solid var(--border);padding:26px 30px">
-    <div class="sec-title" style="margin-bottom:14px">Countries Served — Severance Calculator</div>
-    <div class="chips">
-      <span class="chip on">🇺🇸 USA</span>
-      <span class="chip on">🇬🇧 UK</span>
-      <span class="chip on">🇦🇪 UAE</span>
-      <span class="chip on">🇮🇳 India</span>
-      <span class="chip on">🇵🇰 Pakistan</span>
-      <span class="chip on">🇵🇭 Philippines</span>
-      <span class="chip on">🇸🇦 Saudi Arabia</span>
-      <span class="chip on">🇨🇦 Canada</span>
-      <span class="chip on">🇦🇺 Australia</span>
-      <span class="chip on">🇶🇦 Qatar</span>
-      <span class="chip on">🇰🇼 Kuwait</span>
-      <span class="chip on">🇲🇾 Malaysia</span>
-      <span class="chip on">🇩🇪 Germany</span>
-      <span class="chip on">🇫🇷 France</span>
-      <span class="chip on">🇨🇳 China</span>
-      <span class="chip on">🇧🇷 Brazil</span>
-      <span class="chip on">🇿🇦 South Africa</span>
-      <span class="chip on">+20 more</span>
+  <div class="impact-grid" style="margin-top:28px">
+    <div class="impact-item reveal" data-delay="0">
+      <div class="impact-quote">"An HR manager in Qatar used the Severance Calculator at 2am to figure out a payout. That's the product."</div>
+    </div>
+    <div class="impact-item reveal" data-delay="1">
+      <div class="impact-quote">"TradeConvert is actively bookmarked on iPads at construction sites because the official reference PDFs are unreadable on mobile."</div>
+    </div>
+    <div class="impact-item reveal" data-delay="2">
+      <div class="impact-quote">"A developer formatted a sensitive JWT token on WebToolkit Pro because it strictly runs client-side. Zero trust architecture matters."</div>
+    </div>
+    <div class="impact-item reveal" data-delay="3">
+      <div class="impact-quote">"Over 150 tools built without a single marketing dollar spent. Just spotting gaps and out-executing the SEO competition."</div>
     </div>
   </div>
 </section>
@@ -809,31 +646,31 @@ nav.scrolled{
         <div style="padding:0 18px">
           <div class="tl-item">
             <div class="tl-date">JAN 2024</div>
-            <div><div class="tl-n"><span class="dot dot-g"></span>wtkpro.site — launched</div><div class="tl-d">Dev tools hub, grew to 150+ live utilities</div></div>
+            <div><div class="tl-n"><span class="dot dot-g"></span>wtkpro.site — launched</div><div class="tl-d">Launched with 12 tools. Now at 150+. Zero marketing budget.</div></div>
           </div>
           <div class="tl-item">
             <div class="tl-date">FEB 2026</div>
-            <div><div class="tl-n"><span class="dot dot-g"></span>tradeconvert.pro — launched</div><div class="tl-d">Trade unit converters for construction &amp; engineering</div></div>
+            <div><div class="tl-n"><span class="dot dot-g"></span>tradeconvert.pro — launched</div><div class="tl-d">Built because finding reliable density formulas on mobile was impossible.</div></div>
           </div>
           <div class="tl-item">
             <div class="tl-date">MAY 2026</div>
-            <div><div class="tl-n"><span class="dot dot-g"></span>severancecalculator.xyz — launched</div><div class="tl-d">8 countries · 2026 laws · Global HR tool</div></div>
+            <div><div class="tl-n"><span class="dot dot-g"></span>severancecalculator.xyz — launched</div><div class="tl-d">Built for Pakistan first. Expanded to 30+ countries after global HR requests.</div></div>
           </div>
           <div class="tl-item">
             <div class="tl-date">JUN 2026</div>
-            <div><div class="tl-n"><span class="dot dot-g"></span>slabreachcalculator.site — launched</div><div class="tl-d">SLA penalty and service credit calculator</div></div>
+            <div><div class="tl-n"><span class="dot dot-g"></span>slabreachcalculator.site — launched</div><div class="tl-d">Saving IT managers from writing complex Excel formulas for downtime.</div></div>
           </div>
           <div class="tl-item">
             <div class="tl-date">JUN 2026</div>
-            <div><div class="tl-n"><span class="dot dot-g"></span>CrawlScope — launched</div><div class="tl-d">GEO & AI Crawler Audit Dashboard</div></div>
+            <div><div class="tl-n"><span class="dot dot-g"></span>CrawlScope — launched</div><div class="tl-d">Needed a way to see how GPTBot was reading my own portfolio.</div></div>
           </div>
           <div class="tl-item">
             <div class="tl-date">Q3 2026</div>
-            <div><div class="tl-n"><span class="dot dot-a"></span>Working Capital Calculator</div><div class="tl-d">For CFOs and financial analysts</div></div>
+            <div><div class="tl-n"><span class="dot dot-a"></span>Working Capital Calculator</div><div class="tl-d">Building this because CFOs asked for it after using the Severance tool.</div></div>
           </div>
           <div class="tl-item">
             <div class="tl-date">Q4 2026</div>
-            <div><div class="tl-n"><span class="dot dot-a"></span>Freight Class Calculator</div><div class="tl-d">LTL logistics tool for US shippers</div></div>
+            <div><div class="tl-n"><span class="dot dot-a"></span>Freight Class Calculator</div><div class="tl-d">Democratizing freight class data hidden behind carrier portals.</div></div>
           </div>
         </div>
       </div>
@@ -1130,32 +967,7 @@ nav.scrolled{
       });
     });
 
-    /* ── 7. BUTTON CLICK RIPPLE (lightweight) ── */
-    document.querySelectorAll('.btn-dark, .btn-out, .cta-link').forEach(btn => {
-      btn.addEventListener('click', function(e){
-        const r = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height) * 2;
-        r.style.cssText = `
-          position:absolute;border-radius:50%;
-          width:${size}px;height:${size}px;
-          left:${e.clientX - rect.left - size/2}px;
-          top:${e.clientY - rect.top - size/2}px;
-          background:rgba(255,255,255,0.12);
-          transform:scale(0);pointer-events:none;
-          animation:ripple 500ms cubic-bezier(0.23,1,0.32,1) forwards;
-        `;
-        this.style.position = 'relative';
-        this.style.overflow = 'hidden';
-        this.appendChild(r);
-        setTimeout(() => r.remove(), 520);
-      });
-    });
-
-    /* Ripple keyframe (injected once) */
-    const rStyle = document.createElement('style');
-    rStyle.textContent = '@keyframes ripple{to{transform:scale(1);opacity:0}}';
-    document.head.appendChild(rStyle);
+    /* ── 7. REMOVED RIPPLE FOR EMIL DESIGN POLISH ── */
 
     /* ── 8. SCROLL TO SECTIONS FOR CLEAN URLS ── */
     const sectionRoutes = ['/tools', '/writing', '/about', '/resume', '/proof', '/contact'];
