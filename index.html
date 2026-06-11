@@ -497,14 +497,14 @@ nav.scrolled{
     <img src="logo-light.svg" alt="Abu Sufyan">
   </a>
   <div class="nav-links">
-    <a href="#tools">Tools</a>
-    <a href="#writing">Writing</a>
-    <a href="#about">About</a>
+    <a href="/tools">Tools</a>
+    <a href="/writing">Writing</a>
+    <a href="/about">About</a>
     <a href="/services">Services</a>
-    <a href="#resume">Resume</a>
-    <a href="#proof">Stats</a>
+    <a href="/resume">Resume</a>
+    <a href="/proof">Stats</a>
     <a href="https://wtkpro.site" target="_blank" rel="noopener noreferrer" aria-label="Visit WebToolkit Pro - 150+ Developer Tools">WTK Pro ↗</a>
-    <a href="#contact" class="nav-hire">Hire / Contact</a>
+    <a href="/contact" class="nav-hire">Hire / Contact</a>
   </div>
 </nav>
 
@@ -520,7 +520,7 @@ nav.scrolled{
   <div class="hero-bot reveal" data-delay="2">
     <p class="hero-desc">Hi, I'm <strong>Abu Sufyan</strong>. I build free professional tools for people who need quick, reliable answers — HR managers, developers, CFOs, employees. <strong>No sign-up. No paywall. Just the answer.</strong></p>
     <div class="hero-ctas">
-      <a href="#tools" class="btn-dark">View My Tools</a>
+      <a href="/tools" class="btn-dark">View My Tools</a>
       <a href="https://wtkpro.site" target="_blank" rel="noopener noreferrer" aria-label="Visit WebToolkit Pro - 150+ Developer Tools" class="btn-out">WebToolkit Pro ↗</a>
     </div>
   </div>
@@ -1123,18 +1123,31 @@ nav.scrolled{
     rStyle.textContent = '@keyframes ripple{to{transform:scale(1);opacity:0}}';
     document.head.appendChild(rStyle);
 
-    /* ── 8. PREVENT HASH IN URL ON CLICK ── */
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if(targetId === '#') return;
-        const targetEl = document.querySelector(targetId);
-        if(targetEl) {
-          e.preventDefault();
-          targetEl.scrollIntoView({ behavior: 'smooth' });
-          history.replaceState(null, null, window.location.pathname);
-        }
-      });
+    /* ── 8. SCROLL TO SECTIONS FOR CLEAN URLS ── */
+    const sectionRoutes = ['/tools', '/writing', '/about', '/resume', '/proof', '/contact'];
+    
+    const currentPath = window.location.pathname;
+    if (sectionRoutes.includes(currentPath)) {
+      const targetId = currentPath.substring(1);
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        setTimeout(() => targetEl.scrollIntoView({ behavior: 'smooth' }), 100);
+      }
+    }
+
+    document.querySelectorAll('a').forEach(anchor => {
+      const href = anchor.getAttribute('href');
+      if (href && sectionRoutes.includes(href)) {
+        anchor.addEventListener('click', function(e) {
+          const targetId = href.substring(1);
+          const targetEl = document.getElementById(targetId);
+          if(targetEl) {
+            e.preventDefault();
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+            history.pushState(null, null, href);
+          }
+        });
+      }
     });
 
   })();

@@ -1,3 +1,11 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/tools", "destination": "/" },
+    { "source": "/writing", "destination": "/" },
+    { "source": "/about", "destination": "/" },
+    { "source": "/resume", "destination": "/" },
+    { "source": "/proof", "destination": "/" },
+    { "source": "/contact", "destination": "/" }
+  ]
 }
