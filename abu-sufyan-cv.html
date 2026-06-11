@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abu Sufyan — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ── SCREEN ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:       #1A1A18;
+  --muted:     #6B6B68;
+  --faint:     #B0B0AC;
+  --rule:      #E2E2DE;
+  --accent:    #1A1A18;
+  --paper:     #FAFAF8;
+  --highlight: #F0EFE9;
+  --red:       #C8451A;
+  --page-w:    720px;
+}
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── PRINT BUTTON (screen only) ── */
+.print-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 48px;
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  z-index: 100;
+}
+.print-btn {
+  padding: 8px 20px;
+  background: white;
+  color: var(--ink);
+  border: none;
+  border-radius: 4px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.print-btn:hover { opacity: .85; }
+.print-hint {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,.5);
+  letter-spacing: .04em;
+}
+
+/* ── PAGE WRAPPER ── */
+.cv {
+  max-width: var(--page-w);
+  margin: 64px auto 80px;
+  padding: 60px 64px;
+  background: #fff;
+  border: 1px solid var(--rule);
+}
+
+/* ── HEADER ── */
+.cv-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: end;
+  padding-bottom: 28px;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 32px;
+}
+.name {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: -.01em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.name em {
+  font-style: italic;
+  color: var(--muted);
+}
+.title-line {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.contact-block {
+  text-align: right;
+}
+.contact-block a,
+.contact-block span {
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: none;
+  line-height: 1.9;
+  letter-spacing: .02em;
+}
+.contact-block a:hover { color: var(--ink); }
+.contact-block a.accent { color: var(--red); }
+
+/* ── SECTION ── */
+.section {
+  margin-bottom: 32px;
+}
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--faint);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 6px;
+  margin-bottom: 18px;
+}
+
+/* ── SUMMARY ── */
+.summary {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink);
+  font-weight: 400;
+  max-width: 56ch;
+}
+.summary em { font-style: italic; color: var(--muted); }
+
+/* ── EXPERIENCE ── */
+.exp-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.exp-item:last-child { margin-bottom: 0; }
+.exp-role {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.exp-company {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .04em;
+  margin-bottom: 8px;
+}
+.exp-company .co-link {
+  color: var(--red);
+  text-decoration: none;
+  font-style: normal;
+}
+.exp-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--faint);
+  white-space: nowrap;
+  text-align: right;
+  padding-top: 2px;
+}
+.exp-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.65;
+  grid-column: 1 / -1;
+  margin-top: -4px;
+}
+.exp-bullets {
+  list-style: none;
+  padding: 0;
+  margin-top: 6px;
+}
+.exp-bullets li {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.65;
+  padding-left: 14px;
+  position: relative;
+  margin-bottom: 3px;
+}
+.exp-bullets li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--faint);
+  font-size: 11px;
+  top: 1px;
+}
+
+/* ── PROJECTS ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.proj-item {
+  padding: 14px 16px;
+  background: var(--highlight);
+  border-left: 2px solid var(--ink);
+}
+.proj-name {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+.proj-url {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--red);
+  letter-spacing: .03em;
+  margin-bottom: 6px;
+  text-decoration: none;
+  display: block;
+}
+.proj-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 8px;
+}
+.proj-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  padding: 2px 7px;
+  background: var(--rule);
+  color: var(--muted);
+  border-radius: 2px;
+}
+
+/* ── SKILLS ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.skill-group-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 7px;
+}
+.skill-list {
+  list-style: none;
+}
+.skill-list li {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* ── EDUCATION ── */
+.edu-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.edu-item:last-child { margin-bottom: 0; }
+.edu-degree { font-size: 14px; font-weight: 500; }
+.edu-school {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .03em;
+  margin-top: 2px;
+}
+.edu-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--faint);
+  white-space: nowrap;
+  text-align: right;
+}
+.edu-detail {
+  font-size: 12px;
+  color: var(--muted);
+  grid-column: 1 / -1;
+  margin-top: 2px;
+}
+
+/* ── FOOTER ── */
+.cv-footer {
+  margin-top: 36px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cv-footer-note {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--faint);
+  letter-spacing: .05em;
+}
+.cv-footer-links {
+  display: flex;
+  gap: 16px;
+}
+.cv-footer-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: .04em;
+}
+.cv-footer-links a:hover { color: var(--ink); }
+
+/* ── DIVIDER ── */
+.rule { height: 1px; background: var(--rule); margin: 6px 0 20px; }
+
+/* ── AVAILABILITY BADGE ── */
+.avail-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px 3px 8px;
+  background: #EDFAED;
+  border: 1px solid #A8DBA8;
+  border-radius: 2px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  color: #2E7D32;
+  margin-top: 10px;
+}
+.avail-dot {
+  width: 6px; height: 6px;
+  background: #4CAF50;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+/* ── PRINT STYLES ── */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 16mm 14mm 16mm;
+  }
+  body {
+    background: white;
+    font-size: 12px;
+  }
+  .print-bar { display: none; }
+  .cv {
+    margin: 0;
+    padding: 0;
+    border: none;
+    max-width: 100%;
+    box-shadow: none;
+  }
+  .avail-badge { display: none; }
+  a { color: inherit; text-decoration: none; }
+  .section { margin-bottom: 22px; }
+  .proj-item { break-inside: avoid; }
+  .exp-item { break-inside: avoid; }
+}
+
+@media (max-width: 760px) {
+  .cv { padding: 36px 28px; margin: 56px 0 0; }
+  .cv-header { grid-template-columns: 1fr; }
+  .contact-block { text-align: left; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .name { font-size: 30px; }
+}
+</style>
+</head>
+<body>
+
+<!-- PRINT BAR (hidden on print) -->
+<div class="print-bar">
+  <span class="print-hint">Save as PDF →</span>
+  <button class="print-btn" onclick="window.print()">⬇ Download PDF</button>
+  <span class="print-hint">Ctrl+P → Save as PDF</span>
+</div>
+
+<!-- CV -->
+<div class="cv">
+
+  <!-- HEADER -->
+  <header class="cv-header">
+    <div>
+      <div class="name">Abu <em>Sufyan</em></div>
+      <div class="title-line">Full-Stack Developer · Solo Maker · Technical SEO</div>
+      <div class="avail-badge">
+        <span class="avail-dot"></span>
+        Available for freelance &amp; full-time
+      </div>
+    </div>
+    <div class="contact-block">
+      <span>Lahore, Pakistan</span>
+      <a href="mailto:hello@abusufyan.xyz">hello@abusufyan.xyz</a>
+      <a href="https://abusufyan.xyz" class="accent">abusufyan.xyz</a>
+      <a href="https://linkedin.com/in/abusufyan-wtkpro">linkedin.com/in/abusufyan-wtkpro</a>
+      <a href="https://github.com/abusufyan-netizen">github.com/abusufyan-netizen</a>
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <section class="section">
+    <div class="section-label">Profile</div>
+    <p class="summary">
+      Full-stack developer and solo maker from Pakistan with a focus on building
+      <em>fast, privacy-first web tools</em> that rank on Google and serve real professional needs.
+      Founder of WebToolkit Pro — a 150+ tool developer ecosystem — and a growing network
+      of niche calculator sites with verified organic rankings. Specialises in Next.js,
+      technical SEO, and shipping products that work without a team.
+    </p>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section">
+    <div class="section-label">Experience</div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-role">Founder &amp; Lead Engineer</div>
+        <div class="exp-company">
+          <a href="https://wtkpro.site" class="co-link">WebToolkit Pro</a>
+          &nbsp;·&nbsp; wtkpro.site
+        </div>
+      </div>
+      <div class="exp-date">May 2024 — Present</div>
+      <ul class="exp-bullets">
+        <li>Architected and shipped a 150+ tool developer ecosystem using Next.js 14, TypeScript, and Vercel Edge — all tools run 100% client-side with zero server-side data processing.</li>
+        <li>Implemented programmatic SEO with dynamic JSON-LD schema, structured data, and topical hub architecture — driving organic rankings across 87 blog posts and 160+ tool pages.</li>
+        <li>Built and deployed 4 satellite sites (severancecalculator.xyz, tradeconvert.pro, quranhub.xyz, slabreachcalculator.site) — all ranking within weeks of launch using a submodule-based Git architecture.</li>
+        <li>Achieved position 2.1 on Google for "quran tracker online" and position 4.1 for "quran reading tracker" within 6 weeks of launch with zero paid backlinks.</li>
+        <li>Designed and implemented a 3-tier pricing model (Free / Team Pro / Air-Gapped Enterprise) and a Tauri v2 desktop app CI/CD pipeline on GitHub Actions.</li>
+      </ul>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-role">Lead Engineer</div>
+        <div class="exp-company">Netizen Labs</div>
+      </div>
+      <div class="exp-date">2024 — Present</div>
+      <ul class="exp-bullets">
+        <li>Led full-stack development of client web applications with a focus on performance, Core Web Vitals, and SEO-optimised architecture.</li>
+        <li>Developed SeveranceCalculator.xyz — a multi-jurisdictional HR tool covering 8 countries with official 2025 labor law formulas, including UAE Federal Decree-Law No. 33 and UK Employment Rights Act 1996.</li>
+        <li>Built TradeConvert.pro — 17 NIST-verified construction calculators (pressure, voltage drop, conduit fill, concrete estimator) with print-friendly output and zero external dependencies.</li>
+      </ul>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-role">Freelance Full-Stack Developer</div>
+        <div class="exp-company">Independent · Upwork &amp; Fiverr</div>
+      </div>
+      <div class="exp-date">2023 — Present</div>
+      <ul class="exp-bullets">
+        <li>Delivered full-stack web applications, SEO audits, and technical consulting for international clients across the US, UK, and UAE markets.</li>
+        <li>Specialised in Next.js performance optimisation, Core Web Vitals remediation, and structured data implementation for e-commerce and SaaS clients.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section">
+    <div class="section-label">Projects</div>
+    <div class="projects-grid">
+
+      <div class="proj-item">
+        <div class="proj-name">WebToolkit Pro</div>
+        <a href="https://wtkpro.site" class="proj-url">wtkpro.site</a>
+        <div class="proj-desc">150+ free developer tools — JSON formatter, JWT decoder, regex tester, password generator. Client-side, privacy-first, Next.js 14.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Next.js</span>
+          <span class="proj-tag">TypeScript</span>
+          <span class="proj-tag">Vercel</span>
+          <span class="proj-tag">Technical SEO</span>
+        </div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-name">Severance Pay Calculator</div>
+        <a href="https://severancecalculator.xyz" class="proj-url">severancecalculator.xyz</a>
+        <div class="proj-desc">Global HR tool covering 8 countries. Official 2025 labor law formulas. Ranked position 2 on Google within 3 weeks.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">HTML/CSS/JS</span>
+          <span class="proj-tag">SEO</span>
+          <span class="proj-tag">Schema markup</span>
+        </div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-name">TradeConvert Pro</div>
+        <a href="https://tradeconvert.pro" class="proj-url">tradeconvert.pro</a>
+        <div class="proj-desc">17 construction calculators — voltage drop, concrete, lumber, roofing. NIST-verified formulas. NEC 2026 standards.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Static HTML</span>
+          <span class="proj-tag">NIST</span>
+          <span class="proj-tag">NEC</span>
+        </div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-name">SLA Breach Calculator</div>
+        <a href="https://slabreachcalculator.site" class="proj-url">slabreachcalculator.site</a>
+        <div class="proj-desc">Free B2B tool for IT managers and procurement teams to calculate service credits and delivery penalties from SLA breaches.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">B2B</span>
+          <span class="proj-tag">Niche SEO</span>
+          <span class="proj-tag">Vanilla JS</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section">
+    <div class="section-label">Skills</div>
+    <div class="skills-grid">
+      <div>
+        <div class="skill-group-label">Frontend</div>
+        <ul class="skill-list">
+          <li>Next.js 14 / React</li>
+          <li>TypeScript</li>
+          <li>Tailwind CSS</li>
+          <li>Vanilla HTML / CSS / JS</li>
+          <li>Core Web Vitals</li>
+          <li>PWA / Service Workers</li>
+        </ul>
+      </div>
+      <div>
+        <div class="skill-group-label">Backend &amp; Infra</div>
+        <ul class="skill-list">
+          <li>Node.js</li>
+          <li>Supabase / PostgreSQL</li>
+          <li>Vercel Edge / Serverless</li>
+          <li>GitHub Actions CI/CD</li>
+          <li>Tauri v2 (Desktop)</li>
+          <li>REST API design</li>
+        </ul>
+      </div>
+      <div>
+        <div class="skill-group-label">SEO &amp; Growth</div>
+        <ul class="skill-list">
+          <li>Technical SEO</li>
+          <li>JSON-LD / Schema markup</li>
+          <li>GEO / AI search optimisation</li>
+          <li>Google Search Console</li>
+          <li>Programmatic content</li>
+          <li>Niche site architecture</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section">
+    <div class="section-label">Education</div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">Associate's Degree, Computer Science</div>
+        <div class="edu-school">Lahore Leads University — City Campus</div>
+      </div>
+      <div class="edu-date">Nov 2024 — Jun 2026</div>
+      <div class="edu-detail">Grade: A+ · Activities: Technical Support for faculty · Skills: React.js, Python, full-stack development</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="cv-footer">
+    <span class="cv-footer-note">Updated June 2026 · References available on request</span>
+    <div class="cv-footer-links">
+      <a href="https://abusufyan.xyz">Portfolio</a>
+      <a href="https://wtkpro.site">WTKPro</a>
+      <a href="https://linkedin.com/in/abusufyan-wtkpro">LinkedIn</a>
+      <a href="https://github.com/abusufyan-netizen">GitHub</a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
