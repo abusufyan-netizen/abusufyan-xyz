@@ -1,16 +1,6 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "crawlscope.abusufyan.xyz"
-        }
-      ],
-      "destination": "https://geo-crawl-audit-dashboard.vercel.app/$1"
-    },
     { "source": "/tools", "destination": "/" },
     { "source": "/writing", "destination": "/" },
     { "source": "/about", "destination": "/" },
