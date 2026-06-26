@@ -4,7 +4,9 @@
   "description": "> Solo maker from Pakistan building free professional tools for people worldwide.\r > No sign-up. No paywalls. Just tools that work.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typecheck": "echo \"No typecheck needed\"",
+    "build": "echo \"No build needed\""
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
   },
   "homepage": "https://github.com/abusufyan-netizen/abusufyan-xyz#readme",
   "dependencies": {
-    "@vercel/analytics": "^2.0.1"
+    "@vercel/analytics": "^2.0.1",
+    "nodemailer": "^9.0.1"
   }
 }
